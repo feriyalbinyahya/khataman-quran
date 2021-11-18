@@ -1,0 +1,15 @@
+body {
+    background-color: #C2FFF9; 
+}
+
+.judul-page {
+    font-family: 'Mali', cursive;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.container-page {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}

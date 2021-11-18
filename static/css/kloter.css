@@ -1,0 +1,57 @@
+body {
+    background-color: #C2FFF9;
+}
+
+p, h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-tambah-orang {
+    height: 80px;
+}
+
+
+.button-putaran-baru {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.header-page {
+    margin-left: 50px;
+    margin-top: 30px;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color:white;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.informasi {
+    display: flex;
+    padding: 20px 20px;
+}
+
+.judul-page {
+    font-family: 'Mali', cursive;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.table-data {
+    width: 350px;
+    display: flex;
+}
+
+.container-page {
+    display: flex;
+}
+
+.box1 {
+    width: 1000px;
+    margin-left: 50px;
+    margin-top: 30px;
+    height: fit-content;
+    background-color:white;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}

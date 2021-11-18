@@ -1,0 +1,100 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Kloter</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="txt/javascript" src="{% static 'js/kloter.js'%}"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="sweetalert2.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/kloter.css'%}">
+
+</head>
+<body style="margin:0;">
+	<h1 style="color: #009DAE;" class="judul-page">Khataman Qur'an</h1>
+	<div class="container-page">
+		<div class="header-page">
+			<h4 id="no_kloter" style="font-weight: bold;">Kloter {{ periode.kloter_number }}</h4>
+			<h5>Saat ini khataman qur'an yang ke {{ periode.ronde }}</h5>
+			<h5>Total yang telah selesai ada {{ selesai }}</h5>
+			<div class="tombol-bawah">
+				<a href="/newjuz/{{periode.kloter_number}}"><button style="margin-left: -10px;" type="button" onclick={confirmDialog()} class="btn btn-primary button-putaran-baru">Putaran baru</button></a>
+				<a href="/resetputaran/{{periode.kloter_number}}"><button style="margin-left: 10px;" type="button" class="btn btn-primary button-putaran-baru">Reset putaran</button></a>
+				<a href="/resetjuz/{{periode.kloter_number}}"><button style="margin-left: 10px;" type="button" class="btn btn-primary button-putaran-baru">Reset Juz</button></a>
+			</div>
+			<div style="margin-top: 50px;"><a style="text-decoration: none; margin-top: 50px;" href="{% url 'kloter:list_kloter' %}">< Kembali</a></div>
+		</div>
+	
+		<br>
+	
+	
+		<div class="box1" style="width: 1000px;">
+			<div class="informasi">
+				<h3 style="margin-top: 10px; color: #009DAE;">No.</h3>
+				<h3 style="margin-left: 40px; margin-top: 10px; color: #009DAE;">Juz</h3>
+				<h3 style="margin-left: 50px; margin-top: 10px; color: #009DAE;">Nama</h3>
+				<h3 style="margin-left: 100px; margin-top: 10px; color: #009DAE;">Telepon</h3>
+				<a href="{% url 'kloter:formperson' %}"><button style="height: 40px; width: 130px; margin-left: 300px; margin-top: 10px;" type="button" class="btn btn-primary">Tambah</button></a>
+				
+			</div>
+	
+			<hr>
+			<div class="table-data">
+				<div>
+					{% for i in list_number %}
+						<p style="margin-left: 30px; margin-top: 20px; padding-bottom: 35px;">{{ i }}</p>
+					{% endfor %}
+				</div>
+	
+				<div>
+					{% for i in persons %}
+						<div class="informasi">
+							<p style="margin-left: 50px; color: rgb(175, 149, 0); font-weight: bold;">{{ i.no_juz }}</p>
+							{% if i.selesai %}
+								<div style="width: 180px;"><p style="margin-left: 80px; color:#76db3b; font-weight: bold;">{{ i.name }}</p></div>
+							{% else %}
+								<div style="width: 180px;"><p style="margin-left: 80px; color: rgb(196, 73, 73);">{{ i.name }}</p></div>
+							{% endif %}
+							<div style="width: 180px;"><p style="margin-left: 80px;">{{ i.telepon }}</p></div>
+							<a href="/selesai/{{i.id}}"><button style="margin-left: 140px;" type="button" class="btn btn-success">Selesai</button></a>
+							<a href="/belumselesai/{{i.id}}"><button style="margin-left: 10px; width: 140px;" type="button" class="btn btn-warning">Belum selesai</button></a>
+							<a href="/delete/{{i.id}}"><button style="margin-left: 10px;" type="button" class="btn btn-danger">Hapus</button></a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+<script>
+	
+
+	function confirmDialog() {
+		no_kloter = document.getElementById("no_kloter").textContent;
+		swal({
+			title: "Berhasil",
+			text: "Khataman putaran baru",
+			type: 'success',
+			showConfirmButton: false,
+			timer: 2500
+			}).then(function() {
+				window.location = "/" + str(no_kloter);
+		});
+	}
+</script>
+</body>
+</html>

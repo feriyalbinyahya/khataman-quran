@@ -1,0 +1,40 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Kloter</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formtambah.css'%}">
+</head>
+<body style="margin:0;">
+	<h1 style="color: #009DAE;" class="judul-page">Khataman Qur'an</h1>
+    <form action="{% url 'kloter:addperson' %}" method="POST" style="font-size: 20px;">
+        {% csrf_token %}
+		<div style="display: flex; margin-left: 30px; margin-top: 30px">
+			<p class="label-form">Nama : </p>
+        	{{ person_form.name }}
+		</div>
+		<div style="display: flex; margin-left: 30px; margin-top: 30px">
+			<p class="label-form">No Juz : </p>
+        	{{ person_form.no_juz }}
+		</div>
+		<div style="display: flex; margin-left: 30px; margin-top: 30px">
+			<p class="label-form">No Kloter : </p>
+        	{{ person_form.nomer_kloter }}
+		</div>
+		<div style="display: flex; margin-left: 30px; margin-top: 30px">
+			<p class="label-form">Telepon : </p>
+        	{{ person_form.telepon }}
+		</div>
+        <input id="submit" type="submit" value="Simpan" class="btn btn-primary button-post" style="color:white; margin-left: 200px; margin-top: 30px; font-size: 15px;">
+    </form>
+	<div style="margin-top: 50px;"><a style="text-decoration: none; margin-left: 50px;" href="{% url 'kloter:list_kloter' %}">< Kembali</a></div>
+</body>
+</html>

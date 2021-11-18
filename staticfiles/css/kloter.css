@@ -1,0 +1,44 @@
+body {
+    background-color: cornsilk;
+}
+
+p, h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-tambah-orang {
+    height: 80px;
+}
+
+
+.button-putaran-baru {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.header-page {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.informasi {
+    display: flex;
+    padding: 20px 20px;
+}
+
+.judul-page {
+    font-family: 'Mali', cursive;
+}
+
+.table-data {
+    width: 350px;
+    display: flex;
+}
+
+.box {
+    width: 1000px;
+    margin-left: 50px;
+    height: fit-content;
+    background-color:white;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,23 @@
+body {
+    background-color: #C2FFF9; 
+}
+
+.judul-page {
+    font-family: 'Mali', cursive;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.form-input {
+    border-radius: 10px;
+    font-family: 'Poppins';
+    padding: 5px 5px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.label-form {
+    margin-top: 5px;
+    width: 100px;
+    font-family: 'Poppins';
+}
