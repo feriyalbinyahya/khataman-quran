@@ -25,7 +25,7 @@ SECRET_KEY = 's03=)o&5-*2ti=typ6y37(#raut^y__4fyf47e3cyc7sw5j6$y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "khataman-quran.herokuapp.com/"]
+ALLOWED_HOSTS = ["*", "khataman-alquran.herokuapp.com/"]
 
 
 # Application definition
