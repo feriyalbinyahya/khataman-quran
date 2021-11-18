@@ -115,6 +115,7 @@ def selesai(request, id):
     person.save()
     return HttpResponseRedirect('/' + str(kloter))
 
+#belum selesai
 def belumselesai(request, id):
     person = Person.objects.get(id = id)
     kloter = person.nomer_kloter
